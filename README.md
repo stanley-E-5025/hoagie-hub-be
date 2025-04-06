@@ -20,7 +20,6 @@ Backend API for Hoagie Hub, a collaborative platform designed for creating, shar
   - [Contributor Count via Aggregation](#contributor-count-via-aggregation)
   - [Rate Limiting](#rate-limiting)
   - [Input Validation](#input-validation)
-- [Testing](#testing)
 - [Seed Data](#seed-data)
 
 ## Technologies
@@ -418,20 +417,6 @@ src/
 - Created DTOs with detailed validation rules
 - Implemented global validation pipe in NestJS application
 - Added descriptive Swagger documentation for input requirements
-
-## Testing
-
-Run tests with the following command:
-
-```bash
-npm test
-```
-
-For end-to-end tests:
-
-```bash
-npm run test:e2e
-```
 
 ## Seed Data
 
