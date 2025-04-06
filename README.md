@@ -21,6 +21,7 @@ Backend API for Hoagie Hub, a collaborative platform designed for creating, shar
   - [Rate Limiting](#rate-limiting)
   - [Input Validation](#input-validation)
 - [Testing](#testing)
+- [Seed Data](#seed-data)
 
 ## Technologies
 
@@ -396,4 +397,25 @@ For end-to-end tests:
 
 ```bash
 npm run test:e2e
+```
+
+## Seed Data
+
+This project includes a seed script to create initial data for testing purposes.
+
+### Seed Content
+- 5 users with predefined names and emails
+- 5 hoagies for each user with random images from a predefined set
+- Random ingredients for each hoagie
+
+### How to Run the Seed
+```bash
+# Using npm
+npm run seed
+
+# Using yarn
+yarn seed
+
+# Using pnpm
+pnpm seed
 ```
