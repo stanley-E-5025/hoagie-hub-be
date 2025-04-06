@@ -14,8 +14,11 @@ COPY . .
 # Build the application
 RUN npm run build
 
+# Make entrypoint executable
+RUN chmod +x /app/entrypoint.sh
+
 # Expose the application port
 EXPOSE 3000
 
-# Start the application
-CMD ["npm", "run", "start:prod"] 
+# Start the application with seed
+CMD ["/app/entrypoint.sh"] 

@@ -8,10 +8,11 @@ services:
     container_name: hoagie-hub-api
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - '3000:3000'
     environment:
       - PORT=3000
       - MONGODB_URI=mongodb://mongo:27017/hoagie-hub
+      - RUN_SEED=true
     depends_on:
       - mongo
     networks:
@@ -22,7 +23,7 @@ services:
     container_name: hoagie-hub-mongo
     restart: unless-stopped
     ports:
-      - "27017:27017"
+      - '27017:27017'
     volumes:
       - mongo-data:/data/db
     networks:
@@ -34,4 +35,4 @@ networks:
 
 volumes:
   mongo-data:
-    driver: local 
+    driver: local

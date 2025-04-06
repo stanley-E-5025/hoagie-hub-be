@@ -51,6 +51,7 @@ Backend API for Hoagie Hub, a collaborative platform designed for creating, shar
 - Node.js (v18 or later)
 - npm or yarn
 - MongoDB (local or remote instance)
+- Docker & Docker Compose (optional, for containerized setup)
 
 ### Installation
 
@@ -90,6 +91,39 @@ Backend API for Hoagie Hub, a collaborative platform designed for creating, shar
   npm run build
   npm run start:prod
   ```
+
+### Docker Setup
+
+You can also run the application using Docker for a containerized environment:
+
+1. Make sure Docker and Docker Compose are installed on your system.
+
+2. Build and start the containers:
+
+   ```bash
+   docker-compose up -d
+   ```
+
+   This will start:
+
+   - The API service on port 3000
+   - MongoDB service on port 27017
+
+3. The application will be available at: `http://localhost:3000`
+
+4. The API will automatically seed the database with sample data when started.
+
+5. To stop the containers:
+
+   ```bash
+   docker-compose down
+   ```
+
+6. To rebuild the containers after making changes:
+
+   ```bash
+   docker-compose up -d --build
+   ```
 
 ## API Documentation
 
@@ -404,11 +438,13 @@ npm run test:e2e
 This project includes a seed script to create initial data for testing purposes.
 
 ### Seed Content
+
 - 5 users with predefined names and emails
 - 5 hoagies for each user with random images from a predefined set
 - Random ingredients for each hoagie
 
 ### How to Run the Seed
+
 ```bash
 # Using npm
 npm run seed
