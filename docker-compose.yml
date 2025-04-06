@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hoagie-hub-api
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - MONGODB_URI=mongodb://mongo:27017/hoagie-hub
+    depends_on:
+      - mongo
+    networks:
+      - hoagie-network
+
+  mongo:
+    image: mongo:7
+    container_name: hoagie-hub-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - hoagie-network
+
+networks:
+  hoagie-network:
+    driver: bridge
+
+volumes:
+  mongo-data:
+    driver: local 
